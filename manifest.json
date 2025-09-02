@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Comment Section Enhancer",
+  "version": "1.0",
+  "description": "Adds a custom hyperlink-style button with a search icon above the comment section of YouTube videos.",
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon/blue_search_icon.png"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ],
+  "permissions": [],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
